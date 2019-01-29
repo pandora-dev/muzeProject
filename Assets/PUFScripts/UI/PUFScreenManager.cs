@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class PUFScreenManager : MonoBehaviour
 {
-    void Awake()
-    {
-        if(this.GetComponent<Canvas>()==null){
-            Debug.LogError("This script must be attached into Canvas");
-        }
-    }
-    // Start is called before the first frame update
+    public bool findViewsAutomatically;
+    public List<PUFView> views;
+
     void Start()
     {
-      
-    }
+        if (this.GetComponent<Canvas>() == null)
+        {
+            Debug.LogError("This script must be attached into Canvas");
+        }
+        else
+        {
+            InitialiseScreenManagement();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
+    void InitialiseScreenManagement()
+    {
+
+        //get views into list<views> && activate first one
+        int i = 0;
+        if(findViewsAutomatically)
+        {
+            views = new List<PUFView>();
+            foreach(Transform t in PUFHierarchyHelper.ChildTransforms(this.transform))
+            {
+                if(t.GetComponent<PUFView>()!=null)
+                {
+                    if(i==0){
+                        t.GetComponent<PUFView>().Activate();
+                    }
+                    else { t.GetComponent<PUFView>().Deactivate();
+                    }
+                    views.Add(t.GetComponent<PUFView>());
+                    i++;
+                }
+            }
+        }
+    }
+    
 }
