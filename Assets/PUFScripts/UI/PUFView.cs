@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PUFView : MonoBehaviour
 {
+
+    private bool transitionStarted;
+    private float transitionCountDown;
+    private TransitionType currentTransitionType;
+
     public void Activate()
     {
         isActive = true;
@@ -14,6 +19,38 @@ public class PUFView : MonoBehaviour
         isActive = false;
         this.transform.gameObject.SetActive(false);
     }
-    private bool isActive;
+    public void Transition(TransitionType t,float transitionSpeed)
+    {
+        currentTransitionType = t;
+        transitionCountDown = transitionSpeed;
+        if (t==TransitionType.CenterToLeftOut)
+        {
+            this.GetComponent<Animator>().SetTrigger("isCenterToLeftOut");
+            transitionStarted = true;
+        }
+        else if(t==TransitionType.RightToCenterIn)
+        {
+            this.Activate();
+            this.GetComponent<Animator>().SetTrigger("isRightToCenterIn");
+            transitionStarted = true;
 
+        }
+        else if (t == TransitionType.LeftToCenterIn)
+        {
+            this.Activate();
+            this.GetComponent<Animator>().SetTrigger("isLeftToCenterIn");
+            transitionStarted = true;
+
+        }
+        else if (t == TransitionType.CenterToRightOut)
+        {
+            
+            this.GetComponent<Animator>().SetTrigger("isCenterToRightOut");
+            transitionStarted = true;
+
+        }
+    }
+    private bool isActive;
+    public enum TransitionType { CenterToLeftOut,RightToCenterIn,LeftToCenterIn,CenterToRightOut}
+  
 }

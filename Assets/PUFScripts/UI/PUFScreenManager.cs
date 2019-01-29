@@ -6,6 +6,7 @@ public class PUFScreenManager : MonoBehaviour
 {
     public bool findViewsAutomatically;
     public List<PUFView> views;
+    private int currentScreenIndex;
 
     void Start()
     {
@@ -16,13 +17,29 @@ public class PUFScreenManager : MonoBehaviour
         else
         {
             InitialiseScreenManagement();
+            
         }
 
     }
+    public void Next()
+    {
+        views[currentScreenIndex].Transition(PUFView.TransitionType.CenterToLeftOut,2.0f);
+        currentScreenIndex++;
+        views[currentScreenIndex].Transition(PUFView.TransitionType.RightToCenterIn, 2.0f);
+
+    }
+    public void Prev()
+    {
+        views[currentScreenIndex].Transition(PUFView.TransitionType.CenterToRightOut, 2.0f);
+        currentScreenIndex--;
+        views[currentScreenIndex].Transition(PUFView.TransitionType.LeftToCenterIn, 2.0f);
+
+    }
+
     void InitialiseScreenManagement()
     {
 
-        //get views into list<views> && activate first one
+        currentScreenIndex = 0;
         int i = 0;
         if(findViewsAutomatically)
         {
@@ -31,7 +48,7 @@ public class PUFScreenManager : MonoBehaviour
             {
                 if(t.GetComponent<PUFView>()!=null)
                 {
-                    if(i==0){
+                    if(i==0||i==1||i==2){
                         t.GetComponent<PUFView>().Activate();
                     }
                     else { t.GetComponent<PUFView>().Deactivate();
@@ -41,6 +58,7 @@ public class PUFScreenManager : MonoBehaviour
                 }
             }
         }
+        
     }
     
 }
