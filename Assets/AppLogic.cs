@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class AppLogic : MonoBehaviour
 {
@@ -10,8 +12,13 @@ public class AppLogic : MonoBehaviour
     public int tutorialHorizontalScrollStepCount;
     public HorizontalScrollSnap tutorialHorizontalScrollSnap;
     public PaginationManager tutorialPaginationManager;
+    public ButtonOneClickable ARButton;
+    public ARButtonState arButtonState; 
+    public enum ARButtonState { OPEN,CLOSE};
 
-    
+    GraphicRaycaster m_Raycaster;
+    EventSystem m_EventSystem;
+    PointerEventData m_PointerEventData;
 
 
     public void Start()
@@ -19,8 +26,9 @@ public class AppLogic : MonoBehaviour
 
         pScreenManager = this.GetComponent<PUFScreenManager>();
         pScreenManager.OnScreenSwiped += ScreenSwiped;
+        m_Raycaster = GetComponent<GraphicRaycaster>();
+        m_EventSystem = GetComponent<EventSystem>();
 
-        
     }
 
     public void ScreenSwiped(SwipeData s)
@@ -51,6 +59,35 @@ public class AppLogic : MonoBehaviour
             
         }
     }
+
+    public void Update()
+    {
+        /*
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            m_PointerEventData.position = Input.mousePosition;
+            List<RaycastResult> results = new List<RaycastResult>();
+            m_Raycaster.Raycast(m_PointerEventData, results);
+
+            foreach (RaycastResult result in results)
+            {
+                if(result.gameObject.name)
+                Debug.Log("Hit " + result.gameObject.name);
+            }
+        }
+        */
+    }
+
+    public void ARButtonUp()
+    {
+        ARButton.GetComponent<Animator>().SetTrigger("ARTriggered");
+        arButtonState = ARButtonState.OPEN;
+    }
+    public void ARButtonDown()
+    {
+        pScreenManager.views[1].GetComponent<Animator>().SetTrigger("ARTriggered");
+        arButtonState = ARButtonState.CLOSE;
+    }
+
 
     private bool tutorialPageLatestSwipe()
     {

@@ -8,6 +8,7 @@ public class PUFView : MonoBehaviour
     private bool transitionStarted;
     private float transitionCountDown;
     private TransitionType currentTransitionType;
+    private bool isActive;
 
     public void Activate()
     {
@@ -50,7 +51,7 @@ public class PUFView : MonoBehaviour
 
         }
     }
-    private bool isActive;
+
     public enum TransitionType { CenterToLeftOut,RightToCenterIn,LeftToCenterIn,CenterToRightOut}
   
 }
