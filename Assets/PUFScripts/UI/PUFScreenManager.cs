@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,13 +7,20 @@ public class PUFScreenManager : MonoBehaviour
 {
     public bool findViewsAutomatically;
     public List<PUFView> views;
-    private int currentScreenIndex;
+    public int currentScreenIndex;
+    private SwipeDetector sDetector;
+
+    public event Action<SwipeData> OnScreenSwiped = delegate { };
 
     void Start()
     {
         if (this.GetComponent<Canvas>() == null)
         {
             Debug.LogError("This script must be attached into Canvas");
+        }
+        else if (this.GetComponent<SwipeDetector>() == null)
+        {
+            Debug.LogError("There should be a swipe detector in Mobile apps!");
         }
         else
         {
@@ -35,6 +43,10 @@ public class PUFScreenManager : MonoBehaviour
         views[currentScreenIndex].Transition(PUFView.TransitionType.LeftToCenterIn, 2.0f);
 
     }
+    public void ScreenSwiped(SwipeData s)
+    {
+        OnScreenSwiped(s);
+    }
 
     void InitialiseScreenManagement()
     {
@@ -48,17 +60,16 @@ public class PUFScreenManager : MonoBehaviour
             {
                 if(t.GetComponent<PUFView>()!=null)
                 {
-                    if(i==0||i==1||i==2){
-                        t.GetComponent<PUFView>().Activate();
-                    }
-                    else { t.GetComponent<PUFView>().Deactivate();
-                    }
                     views.Add(t.GetComponent<PUFView>());
-                    i++;
                 }
             }
         }
-        
+
+        //attach swipe event into ScreenManagement
+        sDetector = this.GetComponent<SwipeDetector>();
+        sDetector.OnSwipe += ScreenSwiped;
+
+
     }
     
 }

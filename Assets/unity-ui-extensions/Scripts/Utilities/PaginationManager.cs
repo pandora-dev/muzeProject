@@ -69,6 +69,7 @@ namespace UnityEngine.UI.Extensions
         public void GoToScreen(int pageNo)
         {
             scrollSnap.GoToScreen(pageNo);
+
         }
 
 
@@ -99,6 +100,8 @@ namespace UnityEngine.UI.Extensions
                     }
                 }
             }
+
+
         }
 
         /// <summary>
@@ -109,6 +112,7 @@ namespace UnityEngine.UI.Extensions
         {
             isAClick = true;
             GoToScreen(target);
+            
         }
 
         private void SetToggleGraphics(int pageNo)
