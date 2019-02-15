@@ -11,7 +11,7 @@ public class AppLogic : MonoBehaviour
     public HorizontalScrollSnap tutorialHorizontalScrollSnap;
     public PaginationManager tutorialPaginationManager;
 
-    private bool isFirstSkipTry;
+    
 
 
     public void Start()
@@ -20,7 +20,7 @@ public class AppLogic : MonoBehaviour
         pScreenManager = this.GetComponent<PUFScreenManager>();
         pScreenManager.OnScreenSwiped += ScreenSwiped;
 
-        isFirstSkipTry = true;
+        
     }
 
     public void ScreenSwiped(SwipeData s)
@@ -29,19 +29,7 @@ public class AppLogic : MonoBehaviour
         {
             if(tutorialPageLatestSwipe())
             {
-                if (!isFirstSkipTry) //first one is to go to latest tutorial text. 
-                {
-                    Debug.Log("ilk skip denemesi");
-                    pScreenManager.Next();
-                    isFirstSkipTry = true;
-                }
-                else
-                {
-                    Debug.Log("ikinci skip denemesi");
-                    isFirstSkipTry = false;
-                    
-                }
-                
+                pScreenManager.Next();
             }
             else
             {
@@ -59,10 +47,7 @@ public class AppLogic : MonoBehaviour
             {
                 tutorialPaginationManager.GoToScreen(tutorialPaginationManager.CurrentPage + -1);
             }
-            else
-            {
-                Debug.Log("Screen swiped right");
-            }
+            
             
         }
     }
