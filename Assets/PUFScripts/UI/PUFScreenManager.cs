@@ -29,6 +29,7 @@ public class PUFScreenManager : MonoBehaviour
         }
 
     }
+    
     public void Next()
     {
         views[currentScreenIndex].Transition(PUFView.TransitionType.CenterToLeftOut,2.0f);

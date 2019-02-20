@@ -15,8 +15,12 @@ public class AppLogic : MonoBehaviour
     public ButtonOneClickable ARButton;
     public ARButtonState arButtonState;
     public bool emulateWithMouse;
-
-
+    public Animator mainPageTitleAnimController;
+    public Animator thumbnailButtonAnimController;
+    public Animator arCameraHeaderAnimController;
+    public GameObject tutorialButton;
+    public GameObject backgroundPanel;
+    
     public enum ARButtonState { OPEN,CLOSE};
     GraphicRaycaster m_Raycaster;
     EventSystem m_EventSystem;
@@ -125,8 +129,31 @@ public class AppLogic : MonoBehaviour
 
     public void RunAR()
     {
-        Debug.Log("AR is Running");
+        
+        mainPageTitleAnimController.SetBool("HasFade", true);
+        thumbnailButtonAnimController.SetBool("HasFade", true);
+        ARButtonDown();
+        ARButton.GetComponent<Animator>().SetBool("HasFade", true);
+        arCameraHeaderAnimController.SetBool("HasFade", true);
+        tutorialButton.SetActive(false);
+        pScreenManager.views[1].GetComponent<Animator>().SetBool("isTransparent", true);
+        backgroundPanel.SetActive(false);
+        
+
+        
     }
+
+    public void ExitAR()
+    {
+        arCameraHeaderAnimController.SetBool("HasFade", false);
+        pScreenManager.views[1].GetComponent<Animator>().SetBool("isTransparent", false);
+        mainPageTitleAnimController.SetBool("HasFade", false);
+        thumbnailButtonAnimController.SetBool("HasFade", false);
+        ARButton.GetComponent<Animator>().SetBool("HasFade", false);
+        tutorialButton.SetActive(true); //info butonu da animli olmalı
+    }
+
+
 
 
     public void ARButtonUp()
