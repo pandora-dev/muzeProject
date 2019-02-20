@@ -20,7 +20,7 @@ public class AppLogic : MonoBehaviour
     public Animator arCameraHeaderAnimController;
     public GameObject tutorialButton;
     public GameObject backgroundPanel;
-    
+    public GameObject arBackButton;
     public enum ARButtonState { OPEN,CLOSE};
     GraphicRaycaster m_Raycaster;
     EventSystem m_EventSystem;
@@ -34,6 +34,7 @@ public class AppLogic : MonoBehaviour
         pScreenManager.OnScreenSwiped += ScreenSwiped;
         m_Raycaster = GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
+        arBackButton.SetActive(false);
 
     }
 
@@ -138,6 +139,8 @@ public class AppLogic : MonoBehaviour
         tutorialButton.SetActive(false);
         pScreenManager.views[1].GetComponent<Animator>().SetBool("isTransparent", true);
         backgroundPanel.SetActive(false);
+        arBackButton.SetActive(true);
+        arBackButton.GetComponent<Animator>().SetBool("HasFade", true);
         
 
         
@@ -150,7 +153,9 @@ public class AppLogic : MonoBehaviour
         mainPageTitleAnimController.SetBool("HasFade", false);
         thumbnailButtonAnimController.SetBool("HasFade", false);
         ARButton.GetComponent<Animator>().SetBool("HasFade", false);
-        tutorialButton.SetActive(true); //info butonu da animli olmalı
+        tutorialButton.SetActive(true); 
+        arBackButton.GetComponent<Animator>().SetBool("HasFade", false);
+        arBackButton.SetActive(false);
     }
 
 
