@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: becb3a96005be574391fb6a867de172b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Circle016
+    100002: Circle017
+    100004: Circle018
+    100006: Circle019
+    100008: Circle020
+    100010: Circle021
+    100012: Circle022
+    100014: Circle023
+    100016: //RootNode
+    100018: LevhaIsleme
+    100020: LevhaIsleme001
+    100022: LevhaIsleme002
+    100024: LevhaIsleme003
+    100026: LevhaIsleme004
+    100028: LevhaIsleme005
+    100030: LevhaIsleme006
+    100032: LevhaIsleme007
+    400000: Circle016
+    400002: Circle017
+    400004: Circle018
+    400006: Circle019
+    400008: Circle020
+    400010: Circle021
+    400012: Circle022
+    400014: Circle023
+    400016: //RootNode
+    400018: LevhaIsleme
+    400020: LevhaIsleme001
+    400022: LevhaIsleme002
+    400024: LevhaIsleme003
+    400026: LevhaIsleme004
+    400028: LevhaIsleme005
+    400030: LevhaIsleme006
+    400032: LevhaIsleme007
+    2100000: 02 - Default
+    2100002: Yazi1
+    2100004: Yazi6
+    2100006: Yazi7
+    2100008: Yazi3
+    2100010: Yazi2
+    2100012: Yazi8
+    2100014: Yazi4
+    2100016: Yazi5
+    2300000: Circle016
+    2300002: Circle017
+    2300004: Circle018
+    2300006: Circle019
+    2300008: Circle020
+    2300010: Circle021
+    2300012: Circle022
+    2300014: Circle023
+    2300016: LevhaIsleme
+    2300018: LevhaIsleme001
+    2300020: LevhaIsleme002
+    2300022: LevhaIsleme003
+    2300024: LevhaIsleme004
+    2300026: LevhaIsleme005
+    2300028: LevhaIsleme006
+    2300030: LevhaIsleme007
+    3300000: Circle016
+    3300002: Circle017
+    3300004: Circle018
+    3300006: Circle019
+    3300008: Circle020
+    3300010: Circle021
+    3300012: Circle022
+    3300014: Circle023
+    3300016: LevhaIsleme
+    3300018: LevhaIsleme001
+    3300020: LevhaIsleme002
+    3300022: LevhaIsleme003
+    3300024: LevhaIsleme004
+    3300026: LevhaIsleme005
+    3300028: LevhaIsleme006
+    3300030: LevhaIsleme007
+    4300000: LevhaIsleme
+    4300002: Circle016
+    4300004: LevhaIsleme005
+    4300006: Circle021
+    4300008: LevhaIsleme006
+    4300010: Circle022
+    4300012: LevhaIsleme002
+    4300014: Circle018
+    4300016: LevhaIsleme001
+    4300018: Circle017
+    4300020: LevhaIsleme007
+    4300022: Circle023
+    4300024: LevhaIsleme003
+    4300026: Circle019
+    4300028: LevhaIsleme004
+    4300030: Circle020
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

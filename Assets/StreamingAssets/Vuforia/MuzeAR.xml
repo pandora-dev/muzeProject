@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="kart08" size="4.000000 2.250879" />
+    <ImageTarget name="kart07" size="4.000000 2.250879" />
+    <ImageTarget name="kart06" size="4.000000 2.250879" />
+    <ImageTarget name="kart05" size="4.000000 2.250879" />
+    <ImageTarget name="kart04" size="4.000000 2.250879" />
+    <ImageTarget name="kart03" size="4.000000 2.250879" />
+    <ImageTarget name="kart02" size="4.000000 2.250879" />
+    <ImageTarget name="kart01" size="4.000000 2.250879" />
+  </Tracking>
+</QCARConfig>
